@@ -9,7 +9,7 @@ pipeline {
      }
      stage('build application'){
        steps{
-          sh 'cd fms2/Code/client'
+          sh 'cd /var/lib/jenkins/workspace/fmsdeploy/Code/client'
           sh 'npm install'
           sh 'ng build'
           sh 'cd ..'
