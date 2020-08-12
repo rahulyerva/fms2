@@ -18,5 +18,12 @@ pipeline {
           }
         }
       }
-   }
+     stage('build docker file'){
+       steps{
+          sh 'docker build -t rahulyerva/fmscon .'
+          sh 'docker login -u=rahulyerva -p=Rahul@1995'
+          sh 'docker push rahulyerva/fmscon'
+          }
+        } 
+  }
 }
