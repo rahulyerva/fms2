@@ -11,10 +11,11 @@ pipeline {
        steps{
           dir('./Code/client'){ 
             sh 'npm install'
+            sh 'ng build'
           }
-          sh 'ng build'
-          sh 'cd ..'
-          sh 'npm install'
+          dir('./Code'){
+            sh 'npm install'
+          }
         }
       }
    }
